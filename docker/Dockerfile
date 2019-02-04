@@ -19,17 +19,13 @@ RUN apk --no-cache update && \
 
 RUN pip install awscli --upgrade
 
-COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
-
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+RUN command -v nvm
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ upgrade && \
  apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
  nodejs nodejs-npm chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
-
-RUN nvm install 10.13.0
-
-RUN nvm use 10.13.0
+COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
 
 RUN npm install -g testcafe && \
  npm cache clean --force && \
