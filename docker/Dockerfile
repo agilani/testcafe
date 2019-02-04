@@ -23,9 +23,7 @@ RUN pip install awscli --upgrade
 RUN apk add -U curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-RUN export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+RUN export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ upgrade && \
  apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
