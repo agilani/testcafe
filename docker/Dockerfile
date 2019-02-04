@@ -25,16 +25,14 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
 
 COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
 
-RUN npm install -g n
-
-RUN n 10.13.0
-
-RUN npm install -g testcafe && \
+RUN npm install -g testcafe n && \
  npm cache clean --force && \
  rm -rf /tmp/* && \
  chmod +x /opt/testcafe/docker/testcafe-docker.sh && \
  adduser -D user --uid 1000
- 
+
+RUN n 10.13.0
+
 CMD /bin/bash
 
 USER user
