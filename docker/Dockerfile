@@ -15,7 +15,8 @@ RUN apk --no-cache update && \
     sed \
     sudo \
     unzip \
-    zip
+    zip \
+    dpkg
 
 RUN pip install awscli --upgrade
 
