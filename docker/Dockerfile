@@ -27,7 +27,7 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
  nodejs chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
 COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
 
-RUN nvm install 10.13.0
+RUN nvm install -s 10.13.0
 RUN nvm use 10.13.0
 
 RUN npm install -g testcafe && \
