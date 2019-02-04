@@ -23,7 +23,11 @@ RUN apk --no-cache update && \
 RUN pip install awscli --upgrade
 
 COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
-    
+
+RUN npm install -g n
+
+RUN n 10.13.0
+
 RUN npm install -g testcafe && \
  npm cache clean --force && \
  rm -rf /tmp/* && \
