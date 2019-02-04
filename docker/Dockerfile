@@ -10,7 +10,7 @@ RUN npm install -g testcafe && \
  npm cache clean --force && \
  rm -rf /tmp/* && \
  chmod +x /opt/testcafe/docker/testcafe-docker.sh && \
- adduser -D user
+ adduser -D user --uid 1000
  
  RUN apk --no-cache update && \
     apk --no-cache add \
