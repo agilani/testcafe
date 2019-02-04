@@ -15,13 +15,14 @@ RUN apk --no-cache update && \
     sed \
     sudo \
     unzip \
-    zip \
+    zip
 
 RUN pip install awscli --upgrade
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ upgrade && \
  apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
  nodejs nodejs-npm chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
+
 COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
 
 RUN npm install -g n
