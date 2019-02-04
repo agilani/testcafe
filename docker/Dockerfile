@@ -36,7 +36,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ upgrade && \
  apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ add \
- chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
+ nodejs chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps
 COPY testcafe-docker.sh /opt/testcafe/docker/testcafe-docker.sh
 
 RUN npm install -g testcafe && \
