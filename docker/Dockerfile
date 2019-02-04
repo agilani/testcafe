@@ -18,7 +18,7 @@ RUN apk --no-cache update && \
     zip \
     dpkg \
     chromium firefox xwininfo xvfb dbus eudev ttf-freefont fluxbox procps \
-    nodejs=10.13.0-r0 npm
+    nodejs npm
 
 RUN pip install awscli --upgrade
 
